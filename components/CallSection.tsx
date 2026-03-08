@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Phone, Clock, ShieldCheck } from 'lucide-react';
 
 const CallSection = () => {
-    const phoneNumber = "919899873877";
+    const phoneNumber = "917303301239";
 
     return (
         <section className="py-12 px-6">
@@ -46,7 +46,7 @@ const CallSection = () => {
                                 </div>
                                 <span className="text-slate-500 font-medium text-sm mb-1 uppercase tracking-widest">Global Support Line</span>
                                 <span className="text-2xl md:text-4xl font-black tabular-nums tracking-tighter">
-                                    9899873877
+                                    7303301239
                                 </span>
                             </motion.a>
 

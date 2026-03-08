@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const FloatingActions = () => {
     const [isChatOpen, setIsChatOpen] = useState(false);
     const [showTooltip, setShowTooltip] = useState(false);
-    const phoneNumber = "919899873877";
+    const phoneNumber = "917303301239";
     const whatsappLink = `https://wa.me/${phoneNumber}?text=Hello Ginix Fertility, I am interested in learning more about your surrogacy program.`;
 
     // Show tooltip after a small delay
@@ -103,7 +103,7 @@ const FloatingActions = () => {
                             setIsChatOpen(!isChatOpen);
                             setShowTooltip(false);
                         }}
-                        className={`w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 ${isChatOpen ? 'bg-slate-800 text-white' : 'bg-[#25D366] text-white hover:scale-105 active:scale-90'
+                        className={`w-14 h-14 md:w-16 md:h-16 rounded-full hidden md:flex items-center justify-center shadow-2xl transition-all duration-300 ${isChatOpen ? 'bg-slate-800 text-white' : 'bg-[#25D366] text-white hover:scale-105 active:scale-90'
                             }`}
                     >
                         {isChatOpen ? <X size={24} /> : <MessageCircle size={30} fill="white" />}
