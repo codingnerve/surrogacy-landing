@@ -29,7 +29,7 @@ const About = () => {
     return (
         <section className="section-padding bg-secondary-bg">
             <div className="max-w-7xl mx-auto">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center mb-16 md:mb-24">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center mb-10 md:mb-24">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -55,14 +55,14 @@ const About = () => {
                         transition={{ duration: 0.8 }}
                         className="order-1 lg:order-2 text-center lg:text-left"
                     >
-                        <h2 className="mb-6">
+                        <h2 className="mb-4 md:mb-6">
                             Best Surrogacy Treatment in Delhi
                         </h2>
-                        <p className="text-base md:text-lg text-text-muted mb-8 leading-relaxed">
+                        <p className="text-base md:text-lg text-text-muted mb-6 md:mb-8 leading-relaxed text-sm md:text-base">
                             Recognized as the **Best Surrogacy Center in Delhi**, our program is dedicated to bridging the path to parenthood through transparent and ethical gestational surrogacy. We provide end-to-end coordination, ensuring that both intended parents and surrogates receive the care and respect they deserve.
                         </p>
 
-                        <ul className="space-y-4 mb-8 inline-block text-left">
+                        <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8 inline-block text-left">
                             {[
                                 "Compassionate surrogate matching process",
                                 "Comprehensive pregnancy care and monitoring",
@@ -79,7 +79,7 @@ const About = () => {
                 </div>
 
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                     {cards.map((card, index) => (
                         <motion.div
                             key={index}
@@ -87,13 +87,13 @@ const About = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.2 }}
-                            className="premium-card p-8 group"
+                            className="premium-card p-6 md:p-8 group"
                         >
-                            <div className="w-14 h-14 bg-red-50 text-primary rounded-2xl flex items-center justify-center mb-6 transition-colors group-hover:bg-primary group-hover:text-white">
+                            <div className="w-12 h-12 md:w-14 md:h-14 bg-red-50 text-primary rounded-2xl flex items-center justify-center mb-4 md:mb-6 transition-colors group-hover:bg-primary group-hover:text-white">
                                 {card.icon}
                             </div>
-                            <h3 className="text-xl font-bold mb-4">{card.title}</h3>
-                            <p className="text-text-muted leading-relaxed">
+                            <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">{card.title}</h3>
+                            <p className="text-text-muted leading-relaxed text-sm md:text-base">
                                 {card.description}
                             </p>
                         </motion.div>

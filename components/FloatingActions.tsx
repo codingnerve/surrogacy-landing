@@ -103,7 +103,7 @@ const FloatingActions = () => {
                             setIsChatOpen(!isChatOpen);
                             setShowTooltip(false);
                         }}
-                        className={`w-14 h-14 md:w-16 md:h-16 rounded-full hidden md:flex items-center justify-center shadow-2xl transition-all duration-300 ${isChatOpen ? 'bg-slate-800 text-white' : 'bg-[#25D366] text-white hover:scale-105 active:scale-90'
+                        className={`w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 ${isChatOpen ? 'bg-slate-800 text-white' : 'bg-[#25D366] text-white hover:scale-105 active:scale-90'
                             }`}
                     >
                         {isChatOpen ? <X size={24} /> : <MessageCircle size={30} fill="white" />}

@@ -40,9 +40,9 @@ const Process = () => {
     return (
         <section className="section-padding bg-secondary-bg">
             <div className="max-w-7xl mx-auto">
-                <div className="text-center mb-12 md:mb-16">
-                    <h2 className="mb-4">Your Surrogacy Journey</h2>
-                    <p className="text-sm md:text-base text-text-muted">A step-by-step guide to bringing your dream of parenthood to life.</p>
+                <div className="text-center mb-8 md:mb-16 px-4">
+                    <h2 className="mb-2 md:mb-4">Your Surrogacy Journey</h2>
+                    <p className="text-xs md:text-base text-text-muted">A step-by-step guide to bringing your dream of parenthood to life.</p>
                 </div>
 
                 <div className="relative">
@@ -51,24 +51,24 @@ const Process = () => {
                     {/* Vertical line for mobile */}
                     <div className="lg:hidden absolute left-4 top-0 bottom-0 w-0.5 bg-red-100"></div>
 
-                    <div className="space-y-12 lg:space-y-0">
+                    <div className="space-y-8 md:space-y-12 lg:space-y-0">
                         {steps.map((step, index) => (
                             <div key={index} className={`flex flex-col lg:flex-row items-start lg:items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
-                                <div className={`w-full lg:w-1/2 px-8 pl-12 lg:px-8 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
+                                <div className={`w-full lg:w-1/2 px-6 pl-10 md:px-8 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
                                     <motion.div
                                         initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.6 }}
                                     >
-                                        <span className="text-4xl md:text-5xl font-black text-red-500/10 mb-1 md:mb-2 block">{step.number}</span>
-                                        <h3 className="text-xl md:text-2xl font-bold mb-3">{step.title}</h3>
-                                        <p className="text-sm md:text-base text-text-muted max-w-md mx-0 lg:mx-0">{step.description}</p>
+                                        <span className="text-2xl md:text-5xl font-black text-red-500/10 mb-0 md:mb-2 block">{step.number}</span>
+                                        <h3 className="text-lg md:text-2xl font-bold mb-1 md:mb-3">{step.title}</h3>
+                                        <p className="text-xs md:text-base text-text-muted max-w-md mx-0 lg:mx-0">{step.description}</p>
                                     </motion.div>
                                 </div>
 
                                 {/* Center circle */}
-                                <div className="absolute left-4 lg:relative lg:left-0 z-10 w-4 h-4 rounded-full bg-primary border-4 border-red-100 -translate-x-1/2 lg:translate-x-0 mt-10 lg:mt-0"></div>
+                                <div className="absolute left-4 lg:relative lg:left-0 z-10 w-3 h-3 md:w-4 md:h-4 rounded-full bg-primary border-[3px] md:border-4 border-red-100 -translate-x-1/2 lg:translate-x-0 mt-8 md:mt-10 lg:mt-0"></div>
 
                                 <div className="lg:w-1/2"></div>
                             </div>

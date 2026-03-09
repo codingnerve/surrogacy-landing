@@ -88,7 +88,7 @@ const ContactForm = () => {
 
     return (
         <section className="section-padding bg-[#f4f7ff]" id="contact">
-            <div className="max-w-7xl mx-auto relative overflow-hidden bg-white rounded-2xl md:rounded-[2.5rem] shadow-2xl min-h-[500px] md:min-h-[600px] border border-white/50">
+            <div className="max-w-7xl mx-auto relative overflow-hidden bg-white rounded-2xl md:rounded-[2.5rem] shadow-2xl min-h-[400px] md:min-h-[600px] border border-white/50">
 
                 {/* FULL WIDTH BACKGROUND IMAGE */}
                 <div className="absolute inset-0">
@@ -96,7 +96,7 @@ const ContactForm = () => {
                         src={contactBg}
                         alt="Background"
                         fill
-                        className="object-cover object-left md:object-center"
+                        className="object-cover object-left md:object-center opacity-60 md:opacity-100"
                         priority
                     />
                     <div className="absolute inset-0 bg-white/30 backdrop-blur-[1px] lg:backdrop-blur-0" />
@@ -105,18 +105,18 @@ const ContactForm = () => {
                     <div className="absolute inset-0 bg-white/85 lg:hidden" />
                 </div>
 
-                <div className="relative z-10 flex flex-col lg:grid lg:grid-cols-[1fr_1.1fr] min-h-[500px] md:min-h-[600px]">
+                <div className="relative z-10 flex flex-col lg:grid lg:grid-cols-[1fr_1.1fr] min-h-[400px] md:min-h-[600px]">
                     {/* LEFT SIDE: CONTENT OVERLAY */}
-                    <div className="p-8 md:p-10 lg:p-16 flex flex-col justify-end min-h-[200px] md:min-h-[300px] lg:min-h-full text-center lg:text-left">
+                    <div className="p-6 md:p-10 lg:p-16 flex flex-col justify-end min-h-[150px] md:min-h-[300px] lg:min-h-full text-center lg:text-left">
                         <div className="max-w-md mx-auto lg:mx-0">
-                            <span className="inline-block px-3 py-1 mb-4 text-[10px] font-bold tracking-[0.2em] text-primary uppercase bg-white/80 backdrop-blur-md rounded-full shadow-sm">
+                            <span className="inline-block px-3 py-1 mb-2 md:mb-4 text-[10px] font-bold tracking-[0.2em] text-primary uppercase bg-white/80 backdrop-blur-md rounded-full shadow-sm">
                                 Join the Program
                             </span>
-                            <h2 className="mb-4">
+                            <h2 className="mb-2 md:mb-4 text-2xl md:text-3xl lg:text-4xl">
                                 Begin Your <br className="hidden md:block" />
                                 <span className="text-primary">Journey</span>
                             </h2>
-                            <p className="text-slate-700 font-medium text-base md:text-lg leading-relaxed">
+                            <p className="text-slate-700 font-medium text-sm md:text-lg leading-relaxed">
                                 Ethical, synchronized, and compassionate <br className="hidden md:block" />
                                 guidance for your path to family.
                             </p>
@@ -124,10 +124,10 @@ const ContactForm = () => {
                     </div>
 
                     {/* RIGHT SIDE: FORM PANEL */}
-                    <div className="p-6 md:p-10 lg:p-16 flex flex-col justify-center">
-                        <div className="max-w-md mx-auto w-full bg-white/40 backdrop-blur-xl lg:bg-transparent p-6 md:p-8 lg:p-0 rounded-2xl md:rounded-3xl border border-white/40 lg:border-none shadow-xl lg:shadow-none">
-                            <div className="mb-6 md:mb-8">
-                                <h3 className="text-xl md:text-2xl font-bold text-slate-800 mb-1">Welcome to Care.</h3>
+                    <div className="p-4 md:p-10 lg:p-16 flex flex-col justify-center">
+                        <div className="max-w-md mx-auto w-full bg-white/40 backdrop-blur-xl lg:bg-transparent p-4 md:p-8 lg:p-0 rounded-2xl md:rounded-3xl border border-white/40 lg:border-none shadow-xl lg:shadow-none">
+                            <div className="mb-4 md:mb-8 text-center md:text-left">
+                                <h3 className="text-lg md:text-2xl font-bold text-slate-800 mb-0.5 md:mb-1">Welcome to Care.</h3>
                                 <p className="text-slate-500 text-[10px] md:text-xs">Let&apos;s help you get started on your journey.</p>
                             </div>
 

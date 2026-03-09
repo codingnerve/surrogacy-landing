@@ -37,26 +37,26 @@ const FAQ = () => {
     return (
         <section className="section-padding bg-white">
             <div className="max-w-7xl mx-auto">
-                <div className="text-center mb-10 md:mb-12">
-                    <h2 className="mb-4">Frequently Asked Questions</h2>
-                    <p className="text-text-muted max-w-2xl mx-auto text-sm md:text-base">
+                <div className="text-center mb-8 md:mb-12 px-4">
+                    <h2 className="mb-2 md:mb-4">Frequently Asked Questions</h2>
+                    <p className="text-text-muted max-w-2xl mx-auto text-xs md:text-base">
                         Comprehensive answers to your clinical, legal, and coordination queries.
                     </p>
                 </div>
 
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-4 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-0 md:gap-y-4 items-start px-4">
                     {faqs.map((faq, index) => (
                         <div key={index} className="group border-b border-slate-100 last:border-0 lg:last:border-b">
                             <button
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                className="w-full py-5 text-left flex justify-between items-center gap-4 transition-all"
+                                className="w-full py-4 md:py-5 text-left flex justify-between items-center gap-4 transition-all"
                             >
-                                <span className={`font-bold text-base md:text-lg transition-colors duration-300 ${openIndex === index ? 'text-primary' : 'text-text-main group-hover:text-primary'}`}>
+                                <span className={`font-bold text-[15px] md:text-lg transition-colors duration-300 ${openIndex === index ? 'text-primary' : 'text-text-main group-hover:text-primary'}`}>
                                     {faq.question}
                                 </span>
                                 <span className={`flex-shrink-0 transition-transform duration-500 ease-in-out ${openIndex === index ? 'rotate-180' : ''}`}>
-                                    <ChevronDown className={`w-5 h-5 ${openIndex === index ? 'text-primary' : 'text-slate-400'}`} />
+                                    <ChevronDown className={`w-4 h-4 md:w-5 md:h-5 ${openIndex === index ? 'text-primary' : 'text-slate-400'}`} />
                                 </span>
                             </button>
 
@@ -68,7 +68,7 @@ const FAQ = () => {
                                         exit={{ height: 0, opacity: 0 }}
                                         transition={{ duration: 0.4, ease: "easeInOut" }}
                                     >
-                                        <div className="pb-6 text-sm md:text-base text-text-muted leading-relaxed">
+                                        <div className="pb-4 md:pb-6 text-xs md:text-base text-text-muted leading-relaxed">
                                             {faq.answer}
                                         </div>
                                     </motion.div>

@@ -9,12 +9,11 @@ import CompactEnquiry from './CompactEnquiry';
 
 const Hero = () => {
     return (
-        <section className="relative overflow-hidden bg-gradient-to-br from-red-50/40 via-white to-red-50/30  min-h-[85vh] flex items-center">
-
+        <section className="relative overflow-hidden bg-gradient-to-br from-red-50/40 via-white to-red-50/30 md:min-h-[80vh] flex items-center py-12 md:py-0">
             {/* soft radial background */}
             <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_20%_20%,rgba(220,38,38,0.08),transparent_40%),radial-gradient(circle_at_80%_60%,rgba(220,38,38,0.06),transparent_40%)]" />
 
-            <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center w-full">
+            <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 md:gap-12 items-center w-full px-4 md:px-12 lg:px-24">
 
                 {/* LEFT CONTENT */}
                 <motion.div
@@ -23,11 +22,11 @@ const Hero = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center lg:text-left"
                 >
-                    <span className="inline-block px-4 py-2 mb-6 text-[10px] md:text-xs font-black tracking-[0.15em] text-primary uppercase bg-red-50 border border-primary/10 rounded-full shadow-sm">
+                    <span className="inline-block px-4 py-2 mb-4 md:mb-6 text-[10px] md:text-xs font-black tracking-[0.15em] text-primary uppercase bg-red-50 border border-primary/10 rounded-full shadow-sm">
                         Altruistic Surrogacy Program in Delhi
                     </span>
 
-                    <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-text-main">
+                    <h1 className="mb-4 md:mb-6 text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight text-text-main">
                         Trusted Altruistic Surrogacy Care for Your{" "}
                         <span className="bg-gradient-to-r from-red-600 to-red-400 bg-clip-text text-transparent">
                             Parenthood Journey
