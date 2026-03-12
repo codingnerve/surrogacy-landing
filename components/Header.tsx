@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone } from 'lucide-react';
 import Image from 'next/image';
-import ginixLogo from '@/public/images/ginix.webp';
+import GenixLogo from '@/public/images/Genix.webp';
 import whatsappIcon from '@/public/images/icons8-whatsapp.svg';
 
 const Header = () => {
@@ -17,8 +17,8 @@ const Header = () => {
                 <div className="flex items-center">
                     <div className="relative h-14 w-36 md:h-16 md:w-48 transition-transform hover:scale-105 duration-300">
                         <Image
-                            src={ginixLogo}
-                            alt="Ginix Fertility"
+                            src={GenixLogo}
+                            alt="Genix Fertility"
                             fill
                             className="object-contain"
                             priority

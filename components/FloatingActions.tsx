@@ -8,7 +8,7 @@ const FloatingActions = () => {
     const [isChatOpen, setIsChatOpen] = useState(false);
     const [showTooltip, setShowTooltip] = useState(false);
     const phoneNumber = "917303301239";
-    const whatsappLink = `https://wa.me/${phoneNumber}?text=Hello Ginix Fertility, I am interested in learning more about your surrogacy program.`;
+    const whatsappLink = `https://wa.me/${phoneNumber}?text=Hello Genix Fertility, I am interested in learning more about your surrogacy program.`;
 
     // Show tooltip after a small delay
     useEffect(() => {
@@ -61,7 +61,7 @@ const FloatingActions = () => {
                                     <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-white rounded-full"></span>
                                 </div>
                                 <div className="flex-1">
-                                    <p className="text-[13px] font-bold text-slate-700">Ginix Fertility Care</p>
+                                    <p className="text-[13px] font-bold text-slate-700">Genix Fertility Care</p>
                                     <p className="text-[10px] text-slate-400">Online Specialist</p>
                                 </div>
                                 <MessageCircle size={16} className="text-[#25D366] opacity-30 group-hover:opacity-100 transition-opacity" />

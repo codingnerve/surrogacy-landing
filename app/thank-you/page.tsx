@@ -30,7 +30,7 @@ export default function ThankYou() {
 
                     <p className="text-slate-500 text-sm md:text-lg max-w-md mx-auto leading-relaxed mb-10">
                         You&apos;re now a member of our list of awesome people. <br className="hidden md:block" />
-                        We will message you on <span className="text-[#4FB1A5] font-semibold underline decoration-2 cursor-pointer transition-colors hover:text-[#3d8b82]">surrogacy@ginix.com</span> in order to begin your journey.
+                        We will message you on <span className="text-[#4FB1A5] font-semibold underline decoration-2 cursor-pointer transition-colors hover:text-[#3d8b82]">genixfertility@gmail.com</span> in order to begin your journey.
                     </p>
 
                     {/* Styled Button */}
