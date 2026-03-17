@@ -13,6 +13,10 @@ const FAQ = () => {
             answer: "Surrogacy laws vary by country and region. Our program operates in jurisdictions where gestational surrogacy is legally recognized and regulated, ensuring a secure framework for intended parents and surrogates."
         },
         {
+            question: "What is the surrogacy cost in delhi?",
+            answer: "The **surrogacy cost in delhi** and the broader **surrogacy cost in delhi ncr** depends on individual requirements. We are one of the most transparent **surrogacy companies** and **surrogacy agencies**, providing you with the exact **price of surrogacy** upfront without hidden fees."
+        },
+        {
             question: "How are surrogates selected?",
             answer: "Our surrogates undergo a rigorous multi-stage screening process including medical history review, fertility testing, infectious disease screening, psychological evaluation, and criminal background checks."
         },

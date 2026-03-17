@@ -55,7 +55,7 @@ const WhyUs = () => {
                         viewport={{ once: true }}
                         className="mb-3 md:mb-4"
                     >
-                        Top Surrogacy Clinic Delhi
+                        Leading Surrogacy Clinic Delhi
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -64,7 +64,7 @@ const WhyUs = () => {
                         transition={{ delay: 0.1 }}
                         className="text-sm md:text-base text-text-muted max-w-2xl mx-auto"
                     >
-                        As leading **Surrogacy Experts in Delhi**, we are committed to providing a safe, ethical, and successful path to parenthood with a focus on professional excellence.
+                        As one of the most trusted **surrogacy agencies** and **surrogacy companies**, we feature expert **surrogacy doctors** at our premier **surrogacy hospital**. We are dedicated to providing the best **surrogacy in delhi ncr** with a focus on professional excellence.
                     </motion.p>
                 </div>
 

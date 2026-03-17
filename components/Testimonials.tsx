@@ -31,7 +31,7 @@ const Testimonials = () => {
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-8 md:mb-16">
                     <h2 className="mb-2 md:mb-4">Success Stories</h2>
-                    <p className="text-sm md:text-base text-text-muted">Heartfelt experiences from parents who completed their journey with us.</p>
+                    <p className="text-sm md:text-base text-text-muted">Heartfelt experiences from parents who completed their journey with us, affirming our reputation as a trusted **surrogacy agencies** offering comprehensive **surrogate services** and transparent **surrogacy treatment cost** for **surrogacy in delhi ncr**.</p>
                 </div>
 
 

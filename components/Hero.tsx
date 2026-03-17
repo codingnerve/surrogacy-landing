@@ -23,19 +23,18 @@ const Hero = () => {
                     className="text-center lg:text-left"
                 >
                     <span className="inline-block px-4 py-2 mb-4 md:mb-6 text-[10px] md:text-xs font-black tracking-[0.15em] text-primary uppercase bg-red-50 border border-primary/10 rounded-full shadow-sm">
-                        Altruistic Surrogacy Program in Delhi
+                        Altruistic Surrogacy Program in Delhi NCR
                     </span>
 
                     <h1 className="mb-4 md:mb-6 text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight text-text-main">
-                        Trusted Altruistic Surrogacy Care for Your{" "}
+                        Trusted Altruistic Surrogacy Care at Our{" "}
                         <span className="bg-gradient-to-r from-red-600 to-red-400 bg-clip-text text-transparent">
-                            Parenthood Journey
+                            Surrogacy Hospital
                         </span>
                     </h1>
 
                     <p className="text-base md:text-lg text-text-muted mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                        Ethical <span className="text-primary font-bold">Altruistic Surrogacy</span>, compassionate, and globally supported solutions
-                        designed to bring the joy of parenthood to your family.
+                        Ethical <span className="text-primary font-bold">surrogacy treatment delhi</span>, compassionate **surrogate services**, and globally supported solutions at our **surrogacy centre** designed to bring the joy of parenthood to your family.
                     </p>
 
                     {/* TRUST ROW */}

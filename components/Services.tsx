@@ -49,8 +49,8 @@ const Services = () => {
                         viewport={{ once: true }}
                         className="text-2xl md:text-4xl lg:text-5xl font-semibold text-text-main leading-tight mb-4 md:mb-6 px-4 md:px-0"
                     >
-                        Experience Safe and Reliable Surrogacy<br className="hidden md:block" />
-                        Services in Delhi with Guaranteed Success.
+                        Experience Safe and Reliable Surrogate Services<br className="hidden md:block" />
+                        at Our Surrogacy Clinic Delhi.
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -59,7 +59,7 @@ const Services = () => {
                         transition={{ delay: 0.1 }}
                         className="text-text-muted max-w-4xl mx-auto text-sm md:text-lg leading-relaxed px-4 md:px-0"
                     >
-                        Renowned for outstanding Altruistic and Gestational Surrogacy treatments, our center offers world-class services in the heart of India. We ensure a compassionate and successful surrogacy journey.
+                        Renowned for outstanding **surrogacy treatment delhi** and ethical **surrogacy treatment**, our **surrogacy centre** offers world-class solutions. We provide transparent details on the **surrogacy cost in delhi ncr** and competitive **surrogacy charges in delhi**, ensuring you get the best **price of surrogacy** for your journey.
                     </motion.p>
                 </div>
 

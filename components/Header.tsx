@@ -4,7 +4,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone } from 'lucide-react';
 import Image from 'next/image';
-import GenixLogo from '@/public/images/Genix.webp';
+import GenixLogo from '@/public/images/ginix.webp';
+import GenixIcon from '@/public/images/gpt-image-1.5-high-fidelity_a_make_it_professional-removebg-preview.png';
 import whatsappIcon from '@/public/images/icons8-whatsapp.svg';
 
 const Header = () => {
@@ -12,19 +13,59 @@ const Header = () => {
 
     return (
         <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-slate-100">
-            <div className="px-4 md:px-12 lg:px-24 h-16 md:h-20 flex items-center justify-between">
-                {/* Logo */}
-                <div className="flex items-center">
-                    <div className="relative h-14 w-36 md:h-16 md:w-48 transition-transform hover:scale-105 duration-300">
-                        <Image
-                            src={GenixLogo}
-                            alt="Genix Fertility"
-                            fill
-                            className="object-contain"
-                            priority
-                        />
+            <div className="px-4 md:px-12 lg:px-24 h-24 md:h-32 flex items-center justify-between">
+                {/* Logo Section */}
+                <motion.div 
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ 
+                        opacity: 1, 
+                        x: 0,
+                    }}
+                    transition={{ duration: 0.6 }}
+                    className="flex items-center gap-4 md:gap-6 group cursor-pointer"
+                >
+                    <div className="relative flex items-center gap-3 md:gap-4">
+                        {/* New Icon/Logo - 100% Result Seal */}
+                        <motion.div
+                            whileHover={{ 
+                                scale: 1.15,
+                                rotate: [0, -5, 5, -5, 0],
+                            }}
+                            animate={{
+                                y: [0, -4, 0],
+                            }}
+                            transition={{
+                                y: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+                            }}
+                            className="relative h-20 w-20 md:h-28 md:w-28 overflow-hidden rounded-2xl shadow-xl bg-white border border-slate-50"
+                        >
+                            <Image
+                                src={GenixIcon}
+                                alt="Genix Icon"
+                                fill
+                                className="object-contain p-2 scale-110"
+                                priority
+                            />
+                            {/* Shine effect */}
+                            <motion.div 
+                                className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 to-transparent -translate-x-full"
+                                animate={{ x: ["100%", "-100%"] }}
+                                transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 2 }}
+                            />
+                        </motion.div>
+
+                        {/* Text Logo / Main Logo - Genix Fertility */}
+                        <div className="relative h-20 w-56 md:h-32 md:w-[450px] transition-all duration-500 group-hover:scale-105 origin-left">
+                            <Image
+                                src={GenixLogo}
+                                alt="Genix Fertility"
+                                fill
+                                className="object-contain"
+                                priority
+                            />
+                        </div>
                     </div>
-                </div>
+                </motion.div>
                 {/* Action Group */}
                 <div className="flex items-center gap-2 sm:gap-4 font-sans">
                     {/* Call Action */}

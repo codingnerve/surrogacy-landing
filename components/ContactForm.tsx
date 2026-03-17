@@ -117,8 +117,7 @@ const ContactForm = () => {
                                 <span className="text-primary">Journey</span>
                             </h2>
                             <p className="text-slate-700 font-medium text-sm md:text-lg leading-relaxed">
-                                Ethical, synchronized, and compassionate <br className="hidden md:block" />
-                                guidance for your path to family.
+                                Ethical, synchronized, and compassionate **surrogacy treatment delhi** guidance. As one of the top **surrogacy companies**, we provide clear information on **surrogacy cost in delhi** for your path to family.
                             </p>
                         </div>
                     </div>
@@ -128,7 +127,7 @@ const ContactForm = () => {
                         <div className="max-w-md mx-auto w-full bg-white/40 backdrop-blur-xl lg:bg-transparent p-4 md:p-8 lg:p-0 rounded-2xl md:rounded-3xl border border-white/40 lg:border-none shadow-xl lg:shadow-none">
                             <div className="mb-4 md:mb-8 text-center md:text-left">
                                 <h3 className="text-lg md:text-2xl font-bold text-slate-800 mb-0.5 md:mb-1">Welcome to Care.</h3>
-                                <p className="text-slate-500 text-[10px] md:text-xs">Let&apos;s help you get started on your journey.</p>
+                                <p className="text-slate-500 text-[10px] md:text-xs">Let&apos;s help you get started on your journey with detailed information on **surrogacy charges in delhi** and the total **surrogacy cost in delhi ncr**.</p>
                             </div>
 
 

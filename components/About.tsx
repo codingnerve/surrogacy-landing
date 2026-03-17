@@ -59,7 +59,7 @@ const About = () => {
                             Best Surrogacy Treatment in Delhi
                         </h2>
                         <p className="text-base md:text-lg text-text-muted mb-6 md:mb-8 leading-relaxed text-sm md:text-base">
-                            Recognized as the **Best Surrogacy Center in Delhi**, our program is dedicated to bridging the path to parenthood through transparent and ethical gestational surrogacy. We provide end-to-end coordination, ensuring that both intended parents and surrogates receive the care and respect they deserve.
+                            Recognized as the **Best Surrogacy Clinic in Delhi**, our **surrogacy centre** is dedicated to bridging the path to parenthood through transparent and ethical **surrogacy treatment**. We offer competitive **surrogacy charges in delhi** while providing world-class **surrogate services**. Our focus is to provide the best **price of surrogacy** without compromising on quality, ensuring that the **surrogacy treatment cost** remains affordable for all families.
                         </p>
 
                         <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8 inline-block text-left">
