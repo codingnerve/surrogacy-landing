@@ -39,7 +39,7 @@ const Doctors = () => {
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-8 md:mb-16 px-4">
                     <h2 className="mb-2 md:mb-4">Best Surrogacy Doctors in Delhi</h2>
-                    <p className="text-xs md:text-base text-text-muted">Our **surrogacy doctors** and **Surrogacy Specialists in Delhi** at our world-class **surrogacy hospital** and **surrogacy centre** are dedicated professionals ensuring the highest standards of care and coordination while offering transparent details about **surrogacy treatment cost**.</p>
+                    <p className="text-xs md:text-base text-text-muted">Our surrogacy doctors and Surrogacy Specialists in Delhi at our world-class surrogacy hospital and surrogacy centre are dedicated professionals ensuring the highest standards of care and coordination while offering transparent details about surrogacy treatment cost.</p>
                 </div>
 
 

@@ -34,7 +34,7 @@ const Hero = () => {
                     </h1>
 
                     <p className="text-base md:text-lg text-text-muted mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                        Ethical <span className="text-primary font-bold">surrogacy treatment delhi</span>, compassionate **surrogate services**, and globally supported solutions at our **surrogacy centre** designed to bring the joy of parenthood to your family.
+                        Ethical <span className="text-primary font-bold">surrogacy treatment delhi</span>, compassionate surrogate services, and globally supported solutions at our surrogacy centre designed to bring the joy of parenthood to your family.
                     </p>
 
                     {/* TRUST ROW */}

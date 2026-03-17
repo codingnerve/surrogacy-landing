@@ -42,7 +42,7 @@ const Process = () => {
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-8 md:mb-16 px-4">
                     <h2 className="mb-2 md:mb-4">Your Surrogacy Journey</h2>
-                    <p className="text-xs md:text-base text-text-muted">A step-by-step guide to bringing your dream of parenthood to life with our expert **surrogacy doctors** at our leading **surrogacy clinic delhi**.</p>
+                    <p className="text-xs md:text-base text-text-muted">A step-by-step guide to bringing your dream of parenthood to life with our expert surrogacy doctors at our leading surrogacy clinic delhi.</p>
                 </div>
 
                 <div className="relative">

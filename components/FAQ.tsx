@@ -14,7 +14,7 @@ const FAQ = () => {
         },
         {
             question: "What is the surrogacy cost in delhi?",
-            answer: "The **surrogacy cost in delhi** and the broader **surrogacy cost in delhi ncr** depends on individual requirements. We are one of the most transparent **surrogacy companies** and **surrogacy agencies**, providing you with the exact **price of surrogacy** upfront without hidden fees."
+            answer: "The surrogacy cost in delhi and the broader surrogacy cost in delhi ncr depends on individual requirements. We are one of the most transparent surrogacy companies and surrogacy agencies, providing you with the exact price of surrogacy upfront without hidden fees."
         },
         {
             question: "How are surrogates selected?",
