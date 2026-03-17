@@ -36,7 +36,7 @@ export default function Home() {
           <div className="text-center md:text-left">
             <h3 className="text-xl md:text-2xl font-bold mb-2 text-white">Genix Fertility</h3>
             <p className="text-slate-400 max-w-sm text-xs md:text-base">
-              The **Best Surrogacy Hospital in Delhi**, providing ethical and compassionate **Surrogacy Treatment in Delhi** for families worldwide.
+              The Best Surrogacy Hospital in Delhi, providing ethical and compassionate Surrogacy Treatment in Delhi for families worldwide.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-[11px] md:text-sm font-semibold">
