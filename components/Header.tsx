@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { Phone } from 'lucide-react';
 import Image from 'next/image';
 import GenixLogo from '@/public/images/ginix.webp';
-import GenixIcon from '@/public/images/how-do-we-guarantee-our-results-100-result-guaranteed-11562939909snsu9zh59o-removebg-preview.png';
 import whatsappIcon from '@/public/images/icons8-whatsapp.svg';
 
 const Header = () => {
@@ -25,31 +24,8 @@ const Header = () => {
                     className="group flex min-w-0 flex-1 cursor-pointer items-center gap-2 sm:gap-4 md:gap-6"
                 >
                     <div className="relative flex min-w-0 items-center gap-2 sm:gap-3 md:gap-4">
-                        {/* New Icon/Logo - 100% Result Seal */}
-                        <motion.div
-                            whileHover={{ 
-                                scale: 1.15,
-                                rotate: [0, -5, 5, -5, 0],
-                            }}
-                            animate={{
-                                y: [0, -4, 0],
-                            }}
-                            transition={{
-                                y: { duration: 3, repeat: Infinity, ease: "easeInOut" }
-                            }}
-                            className="relative h-12 w-12 sm:h-16 sm:w-16 md:h-28 md:w-28 shrink-0"
-                        >
-                            <Image
-                                src={GenixIcon}
-                                alt="100% Results Guaranteed"
-                                fill
-                                className="object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]"
-                                priority
-                            />
-                        </motion.div>
-
                         {/* Text Logo / Main Logo - Genix Fertility */}
-                        <div className="relative h-14 w-44 sm:h-16 sm:w-56 md:h-32 md:w-[450px] min-w-0 transition-all duration-500 group-hover:scale-105 origin-left">
+                        <div className="relative h-16 w-52 sm:h-20 sm:w-64 md:h-32 md:w-[480px] min-w-0 transition-all duration-500 group-hover:scale-105 origin-left">
                             <Image
                                 src={GenixLogo}
                                 alt="Genix Fertility"
@@ -66,10 +42,10 @@ const Header = () => {
                     <motion.a
                         href={`tel:+${phoneNumber}`}
                         whileHover={{ y: -1 }}
-                        className="flex items-center justify-center gap-1.5 sm:gap-2 whitespace-nowrap rounded-full border-2 border-primary bg-primary px-2.5 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 text-white shadow-md hover:shadow-lg transition-all duration-200"
+                        className="flex items-center justify-center gap-2 sm:gap-2.5 whitespace-nowrap rounded-full border-2 border-primary bg-primary px-3 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 text-white shadow-md hover:shadow-lg transition-all duration-200"
                     >
-                        <Phone size={16} className="fill-white sm:w-[18px] sm:h-[18px]" />
-                        <span className="text-xs sm:text-sm md:text-base leading-none font-extrabold tracking-tight tabular-nums">7303301239</span>
+                        <Phone size={18} className="fill-white sm:w-[20px] sm:h-[20px]" />
+                        <span className="text-sm sm:text-base md:text-lg leading-none font-extrabold tracking-tight tabular-nums">7303301239</span>
                     </motion.a>
 
                     {/* WhatsApp Action */}

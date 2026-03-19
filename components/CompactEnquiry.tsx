@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Send, Loader2 } from 'lucide-react';
+import Image from 'next/image';
 
 const CompactEnquiry = () => {
     const router = useRouter();
@@ -94,11 +95,20 @@ const CompactEnquiry = () => {
             </p>
 
             {/* Guaranteed programme highlight */}
-            <div className="mb-2 overflow-hidden rounded-lg bg-linear-to-r from-red-600 to-red-500 px-3 py-2 shadow-md shadow-red-200/60">
-                <p className="text-center text-[11px] sm:text-xs font-black tracking-wide text-white uppercase">
-                     Guaranteed Surrogacy Programme in{" "}
-                    <span className="text-yellow-300 text-sm sm:text-base font-black">₹15 Lakhs</span>
-                </p>
+            <div className="mb-2 overflow-hidden rounded-xl bg-linear-to-r from-red-600 to-red-500 px-4 py-4 shadow-lg shadow-red-300/40">
+                <div className="flex items-center justify-center gap-3">
+                    <Image
+                        src="/images/how-do-we-guarantee-our-results-100-result-guaranteed-11562939909snsu9zh59o-removebg-preview.png"
+                        alt="100% Guaranteed"
+                        width={56}
+                        height={56}
+                        className="shrink-0 drop-shadow-md"
+                    />
+                    <p className="text-sm sm:text-base font-bold tracking-wide text-white/95 leading-snug">
+                        Guaranteed Surrogacy Programme in{" "}
+                        <span className="whitespace-nowrap text-yellow-200 text-lg sm:text-xl font-extrabold drop-shadow-sm">₹15 Lakh*</span>
+                    </p>
+                </div>
             </div>
 
             {/* Offer banner */}

@@ -130,16 +130,25 @@ const ContactForm = () => {
                                 <p className="text-slate-500 text-[10px] md:text-xs">Let&apos;s help you get started on your journey with detailed information on surrogacy charges in delhi and the total surrogacy cost in delhi ncr.</p>
                             </div>
 
-                            <div className="mb-2 md:mb-3 overflow-hidden rounded-xl bg-linear-to-r from-red-600 to-red-500 px-3 py-2 md:px-4 md:py-2.5 shadow-md shadow-red-200/60">
-                                <p className="text-center text-[11px] md:text-xs font-black tracking-wide text-white uppercase">
-                                     Guaranteed Surrogacy Programme in{" "}
-                                    <span className="text-yellow-300 text-sm md:text-base font-black">₹15 Lakhs</span>
-                                </p>
+                            <div className="mb-2 md:mb-3 overflow-hidden rounded-xl bg-linear-to-r from-red-600 to-red-500 px-4 py-4 shadow-lg shadow-red-300/40">
+                                <div className="flex items-center justify-center gap-3">
+                                    <Image
+                                        src="/images/how-do-we-guarantee-our-results-100-result-guaranteed-11562939909snsu9zh59o-removebg-preview.png"
+                                        alt="100% Guaranteed"
+                                        width={56}
+                                        height={56}
+                                        className="shrink-0 drop-shadow-md"
+                                    />
+                                    <p className="text-sm sm:text-base font-bold tracking-wide text-white/95 leading-snug">
+                                        Guaranteed Surrogacy Programme in{" "}
+                                        <span className="whitespace-nowrap text-yellow-300 text-lg sm:text-xl font-extrabold drop-shadow-sm">₹15 Lakh*</span>
+                                    </p>
+                                </div>
                             </div>
 
                             <div className="mb-3 md:mb-5 rounded-xl border border-red-200/70 bg-red-50/80 px-3 py-2.5 md:px-4 md:py-3 text-center md:text-left">
                                 <p className="text-[11px] sm:text-xs md:text-sm font-semibold leading-snug text-red-700">
-                                    Free Ultrasound &amp; TVS Scan Worth ₹4500/- and avail 25% Discount on Fertility Analysis Test!!.
+                                    🎁 Free Ultrasound &amp; TVS Scan Worth ₹4500/- and avail 25% Discount on Fertility Analysis Test!!
                                 </p>
                             </div>
 
