@@ -88,7 +88,7 @@ const ContactForm = () => {
 
     return (
         <section className="section-padding bg-[#f4f7ff]" id="contact">
-            <div className="max-w-7xl mx-auto relative overflow-hidden bg-white rounded-2xl md:rounded-[2.5rem] shadow-2xl min-h-[400px] md:min-h-[600px] border border-white/50">
+            <div className="max-w-7xl mx-auto relative overflow-hidden bg-white rounded-2xl md:rounded-[2.5rem] shadow-2xl min-h-[360px] md:min-h-[600px] border border-white/50">
 
                 {/* FULL WIDTH BACKGROUND IMAGE */}
                 <div className="absolute inset-0">
@@ -101,38 +101,44 @@ const ContactForm = () => {
                     />
                     <div className="absolute inset-0 bg-white/30 backdrop-blur-[1px] lg:backdrop-blur-0" />
                     {/* Gradient overlay to ensure form readability on the right */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-white/95 hidden lg:block" />
+                    <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/40 to-white/95 hidden lg:block" />
                     <div className="absolute inset-0 bg-white/85 lg:hidden" />
                 </div>
 
-                <div className="relative z-10 flex flex-col lg:grid lg:grid-cols-[1fr_1.1fr] min-h-[400px] md:min-h-[600px]">
+                <div className="relative z-10 flex flex-col lg:grid lg:grid-cols-[1fr_1.1fr] min-h-[360px] md:min-h-[600px]">
                     {/* LEFT SIDE: CONTENT OVERLAY */}
-                    <div className="p-6 md:p-10 lg:p-16 flex flex-col justify-end min-h-[150px] md:min-h-[300px] lg:min-h-full text-center lg:text-left">
+                    <div className="p-4 sm:p-5 md:p-10 lg:p-16 flex flex-col justify-end min-h-[120px] md:min-h-[300px] lg:min-h-full text-center lg:text-left">
                         <div className="max-w-md mx-auto lg:mx-0">
-                            <span className="inline-block px-3 py-1 mb-2 md:mb-4 text-[10px] font-bold tracking-[0.2em] text-primary uppercase bg-white/80 backdrop-blur-md rounded-full shadow-sm">
+                            <span className="inline-block px-2.5 py-1 mb-2 md:mb-4 text-[9px] md:text-[10px] font-bold tracking-[0.14em] md:tracking-[0.2em] text-primary uppercase bg-white/80 backdrop-blur-md rounded-full shadow-sm">
                                 Join the Program
                             </span>
-                            <h2 className="mb-2 md:mb-4 text-2xl md:text-3xl lg:text-4xl">
+                            <h2 className="mb-1.5 md:mb-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl">
                                 Begin Your <br className="hidden md:block" />
                                 <span className="text-primary">Journey</span>
                             </h2>
-                            <p className="text-slate-700 font-medium text-sm md:text-lg leading-relaxed">
+                            <p className="text-slate-700 font-medium text-xs sm:text-sm md:text-lg leading-relaxed">
                                 Ethical, synchronized, and compassionate surrogacy treatment delhi guidance. As one of the top surrogacy companies, we provide clear information on surrogacy cost in delhi for your path to family.
                             </p>
                         </div>
                     </div>
 
                     {/* RIGHT SIDE: FORM PANEL */}
-                    <div className="p-4 md:p-10 lg:p-16 flex flex-col justify-center">
-                        <div className="max-w-md mx-auto w-full bg-white/40 backdrop-blur-xl lg:bg-transparent p-4 md:p-8 lg:p-0 rounded-2xl md:rounded-3xl border border-white/40 lg:border-none shadow-xl lg:shadow-none">
-                            <div className="mb-4 md:mb-8 text-center md:text-left">
-                                <h3 className="text-lg md:text-2xl font-bold text-slate-800 mb-0.5 md:mb-1">Welcome to Care.</h3>
+                    <div className="p-3 sm:p-4 md:p-10 lg:p-16 flex flex-col justify-center">
+                        <div className="max-w-md mx-auto w-full bg-white/40 backdrop-blur-xl lg:bg-transparent p-3 sm:p-4 md:p-8 lg:p-0 rounded-2xl md:rounded-3xl border border-white/40 lg:border-none shadow-xl lg:shadow-none">
+                            <div className="mb-3 md:mb-8 text-center md:text-left">
+                                <h3 className="text-base sm:text-lg md:text-2xl font-bold text-slate-800 mb-0.5 md:mb-1">Welcome to Care.</h3>
                                 <p className="text-slate-500 text-[10px] md:text-xs">Let&apos;s help you get started on your journey with detailed information on surrogacy charges in delhi and the total surrogacy cost in delhi ncr.</p>
                             </div>
 
+                            <div className="mb-3 md:mb-5 rounded-xl border border-red-200/70 bg-red-50/80 px-3 py-2.5 md:px-4 md:py-3 text-center md:text-left">
+                                <p className="text-[11px] sm:text-xs md:text-sm font-semibold leading-snug text-red-700">
+                                    Free Ultrasound &amp; TVS Scan Worth ₹4500/- and avail 25% Discount on Fertility Analysis Test!!.
+                                </p>
+                            </div>
 
-                            <form onSubmit={handleSubmit} className="space-y-3">
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+                            <form onSubmit={handleSubmit} className="space-y-2.5 md:space-y-3">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 md:gap-3">
                                     <div className="space-y-1">
                                         <input
                                             type="text"
@@ -140,7 +146,7 @@ const ContactForm = () => {
                                             placeholder="Full Name"
                                             value={formData.name}
                                             onChange={handleChange}
-                                            className="w-full px-4 py-3 rounded-lg border border-slate-200/60 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all text-sm bg-white/60"
+                                            className="w-full px-3.5 py-2.5 md:px-4 md:py-3 rounded-lg border border-slate-200/60 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all text-xs sm:text-sm bg-white/60"
                                         />
                                         {errors.name && <span className="text-[10px] text-red-500 ml-2">{errors.name}</span>}
                                     </div>
@@ -151,7 +157,7 @@ const ContactForm = () => {
                                             placeholder="Email Address"
                                             value={formData.email}
                                             onChange={handleChange}
-                                            className="w-full px-4 py-3 rounded-lg border border-slate-200/60 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all text-sm bg-white/60"
+                                            className="w-full px-3.5 py-2.5 md:px-4 md:py-3 rounded-lg border border-slate-200/60 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all text-xs sm:text-sm bg-white/60"
                                         />
                                         {errors.email && <span className="text-[10px] text-red-500 ml-2">{errors.email}</span>}
                                     </div>
@@ -164,7 +170,7 @@ const ContactForm = () => {
                                         placeholder="Phone Number"
                                         value={formData.phone}
                                         onChange={handleChange}
-                                        className="w-full px-4 py-3 rounded-lg border border-slate-200/60 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all text-sm bg-white/60"
+                                        className="w-full px-3.5 py-2.5 md:px-4 md:py-3 rounded-lg border border-slate-200/60 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all text-xs sm:text-sm bg-white/60"
                                     />
                                     {errors.phone && <span className="text-[10px] text-red-500 ml-2">{errors.phone}</span>}
                                 </div>
@@ -188,11 +194,11 @@ const ContactForm = () => {
                                         placeholder="Your Message (Optional)"
                                         value={formData.message}
                                         onChange={handleChange}
-                                        className="w-full px-4 py-3 rounded-lg border border-slate-200/60 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all text-sm bg-white/60 min-h-[100px] resize-none"
+                                        className="w-full px-3.5 py-2.5 md:px-4 md:py-3 rounded-lg border border-slate-200/60 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all text-xs sm:text-sm bg-white/60 min-h-[84px] md:min-h-[100px] resize-none"
                                     />
                                 </div>
 
-                                <div className="space-y-1.5 mt-4">
+                                <div className="space-y-1.5 mt-3 md:mt-4">
                                     <label className="flex items-start gap-2 cursor-pointer group">
                                         <input type="checkbox" required className="mt-1 accent-primary scale-90" />
                                         <span className="text-[11px] text-slate-500 leading-tight">
@@ -210,7 +216,7 @@ const ContactForm = () => {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full bg-primary hover:bg-red-700 text-white py-3.5 rounded-lg font-bold text-xs uppercase tracking-widest transition-all mt-4 flex items-center justify-center gap-2 shadow-lg shadow-red-200/50"
+                                    className="w-full bg-primary hover:bg-red-700 text-white py-3 md:py-3.5 rounded-lg font-bold text-[11px] md:text-xs uppercase tracking-[0.12em] md:tracking-widest transition-all mt-3 md:mt-4 flex items-center justify-center gap-2 shadow-lg shadow-red-200/50"
                                 >
                                     {isSubmitting ? <Loader2 size={14} className="animate-spin" /> : 'Get Started Now'}
                                 </button>

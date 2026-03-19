@@ -17,7 +17,32 @@ const FloatingActions = () => {
     }, []);
 
     return (
-        <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-4 pointer-events-none">
+        <>
+            {/* Mobile floating actions: Call left, WhatsApp right */}
+            <div className="md:hidden fixed bottom-5 inset-x-0 z-9999 px-4 pointer-events-none">
+                <div className="flex items-center justify-between pointer-events-auto">
+                    <a
+                        href={`tel:+${phoneNumber}`}
+                        title="Call now"
+                        aria-label="Call now"
+                        className="w-13 h-13 rounded-full bg-white text-slate-600 border border-slate-100 shadow-xl flex items-center justify-center active:scale-90"
+                    >
+                        <Phone size={20} fill="currentColor" />
+                    </a>
+                    <a
+                        href={whatsappLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Chat on WhatsApp"
+                        aria-label="Chat on WhatsApp"
+                        className="w-14 h-14 rounded-full bg-[#25D366] text-white shadow-2xl flex items-center justify-center active:scale-90"
+                    >
+                        <MessageCircle size={28} fill="white" />
+                    </a>
+                </div>
+            </div>
+
+            <div className="hidden md:flex fixed bottom-6 right-6 z-9999 flex-col items-end gap-4 pointer-events-none">
 
             {/* 1. CHAT WIDGET POPUP */}
             <AnimatePresence>
@@ -26,7 +51,7 @@ const FloatingActions = () => {
                         initial={{ opacity: 0, scale: 0.9, y: 20, transformOrigin: 'bottom right' }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                        className="pointer-events-auto mb-2 w-[300px] md:w-[350px] bg-white rounded-2xl md:rounded-[1.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden border border-slate-100"
+                        className="pointer-events-auto mb-2 hidden md:block w-[300px] md:w-[350px] bg-white rounded-2xl md:rounded-[1.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden border border-slate-100"
                     >
                         {/* Header */}
                         <div className="bg-[#25D366] p-5 text-white text-left">
@@ -81,7 +106,7 @@ const FloatingActions = () => {
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0 }}
-                            className="bg-white px-4 py-2 rounded-lg shadow-lg border border-slate-100 mb-1"
+                            className="hidden md:block bg-white px-4 py-2 rounded-lg shadow-lg border border-slate-100 mb-1"
                         >
                             <span className="text-xs font-semibold text-slate-500">Need Help? Chat with us</span>
                         </motion.div>
@@ -92,25 +117,30 @@ const FloatingActions = () => {
                     {/* Secondary Call Button for conversion */}
                     <a
                         href={`tel:+${phoneNumber}`}
+                        title="Call now"
+                        aria-label="Call now"
                         className="bg-white text-slate-600 p-3 rounded-full shadow-xl border border-slate-100 hover:text-primary transition-all active:scale-90"
                     >
                         <Phone size={20} fill="currentColor" />
                     </a>
 
-                    {/* Main WhatsApp Toggle */}
+                    {/* Main WhatsApp Toggle (Desktop only) */}
                     <button
                         onClick={() => {
                             setIsChatOpen(!isChatOpen);
                             setShowTooltip(false);
                         }}
-                        className={`w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 ${isChatOpen ? 'bg-slate-800 text-white' : 'bg-[#25D366] text-white hover:scale-105 active:scale-90'
+                        className={`hidden md:flex w-14 h-14 md:w-16 md:h-16 rounded-full items-center justify-center shadow-2xl transition-all duration-300 ${isChatOpen ? 'bg-slate-800 text-white' : 'bg-[#25D366] text-white hover:scale-105 active:scale-90'
                             }`}
+                        aria-label={isChatOpen ? "Close chat" : "Open chat"}
+                        title={isChatOpen ? "Close chat" : "Open chat"}
                     >
                         {isChatOpen ? <X size={24} /> : <MessageCircle size={30} fill="white" />}
                     </button>
                 </div>
             </div>
-        </div>
+            </div>
+        </>
     );
 };
 

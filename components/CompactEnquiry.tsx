@@ -84,23 +84,31 @@ const CompactEnquiry = () => {
         <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white/95 backdrop-blur-xl p-6 md:p-7 rounded-2xl shadow-2xl border border-red-100"
+            className="bg-white/95 backdrop-blur-xl p-4 sm:p-5 md:p-7 rounded-2xl shadow-2xl border border-red-100"
         >
-            <h3 className="text-lg md:text-xl font-semibold text-text-main mb-1">
+            <h3 className="text-base sm:text-lg md:text-xl font-semibold text-text-main mb-0.5 md:mb-1">
                 Start Your Surrogacy Journey
             </h3>
-            <p className="text-sm text-text-muted mb-4">
+            <p className="text-xs sm:text-sm text-text-muted mb-3 md:mb-4">
                 Speak with our care coordinator
             </p>
 
-            <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {/* Offer banner */}
+            <div className="mb-3 flex items-start gap-2 rounded-lg border border-red-200/70 bg-red-50/90 px-3 py-2">
+                <span className="mt-0.5 text-base leading-none">🎁</span>
+                <p className="text-[10px] sm:text-[11px] font-semibold leading-snug text-red-700">
+                    Free Ultrasound &amp; TVS Scan Worth ₹4500/- and avail 25% Discount on Fertility Analysis Test!!
+                </p>
+            </div>
+
+            <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 md:gap-3">
                 <input
                     type="text"
                     name="name"
                     placeholder="Full Name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`w-full h-11 px-4 rounded-lg border text-sm ${errors.name ? 'border-red-500' : 'border-slate-200'
+                    className={`w-full h-10 sm:h-11 px-3 sm:px-4 rounded-lg border text-xs sm:text-sm ${errors.name ? 'border-red-500' : 'border-slate-200'
                         } focus:outline-none focus:ring-2 focus:ring-primary/20 bg-white`}
                 />
 
@@ -110,7 +118,7 @@ const CompactEnquiry = () => {
                     placeholder="Email Address"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full h-11 px-4 rounded-lg border text-sm ${errors.email ? 'border-red-500' : 'border-slate-200'
+                    className={`w-full h-10 sm:h-11 px-3 sm:px-4 rounded-lg border text-xs sm:text-sm ${errors.email ? 'border-red-500' : 'border-slate-200'
                         } focus:outline-none focus:ring-2 focus:ring-primary/20 bg-white`}
                 />
 
@@ -120,7 +128,7 @@ const CompactEnquiry = () => {
                     placeholder="Phone Number"
                     value={formData.phone}
                     onChange={handleChange}
-                    className={`w-full h-11 px-4 rounded-lg border text-sm ${errors.phone ? 'border-red-500' : 'border-slate-200'
+                    className={`w-full h-10 sm:h-11 px-3 sm:px-4 rounded-lg border text-xs sm:text-sm ${errors.phone ? 'border-red-500' : 'border-slate-200'
                         } focus:outline-none focus:ring-2 focus:ring-primary/20 bg-white`}
                 />
 
@@ -129,13 +137,13 @@ const CompactEnquiry = () => {
                     placeholder="Your Message (Optional)"
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full sm:col-span-2 p-3 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 bg-white min-h-[80px] resize-none shadow-sm"
+                    className="w-full sm:col-span-2 p-2.5 sm:p-3 rounded-lg border border-slate-200 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 bg-white min-h-[72px] sm:min-h-[80px] resize-none shadow-sm"
                 />
 
                 <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="sm:col-span-2 h-11 rounded-full bg-primary text-white font-semibold text-sm shadow-md hover:bg-red-700 transition-all flex items-center justify-center gap-2"
+                    className="sm:col-span-2 h-10 sm:h-11 rounded-full bg-primary text-white font-semibold text-xs sm:text-sm shadow-md hover:bg-red-700 transition-all flex items-center justify-center gap-2"
                 >
                     {isSubmitting ? (
                         <Loader2 size={16} className="animate-spin" />
@@ -147,7 +155,7 @@ const CompactEnquiry = () => {
                 </button>
             </form>
 
-            <p className="text-[11px] text-text-muted mt-3 text-center">
+            <p className="text-[10px] sm:text-[11px] text-text-muted mt-2.5 md:mt-3 text-center">
                 Your information is confidential and secure
             </p>
         </motion.div>
