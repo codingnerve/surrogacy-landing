@@ -34,8 +34,8 @@ const CompactEnquiry = () => {
         setIsSubmitting(true);
         try {
             // Your exact Form ID
-            const formId = "2901"; 
-            
+            const formId = "2901";
+
             // The correct .com WordPress API URL
             const wpApiUrl = `https://genixfertility.com/wp-json/metform/v1/entries/insert/${formId}`;
 
@@ -92,6 +92,14 @@ const CompactEnquiry = () => {
             <p className="text-xs sm:text-sm text-text-muted mb-3 md:mb-4">
                 Speak with our care coordinator
             </p>
+
+            {/* Guaranteed programme highlight */}
+            <div className="mb-2 overflow-hidden rounded-lg bg-linear-to-r from-red-600 to-red-500 px-3 py-2 shadow-md shadow-red-200/60">
+                <p className="text-center text-[11px] sm:text-xs font-black tracking-wide text-white uppercase">
+                     Guaranteed Surrogacy Programme in{" "}
+                    <span className="text-yellow-300 text-sm sm:text-base font-black">₹15 Lakhs</span>
+                </p>
+            </div>
 
             {/* Offer banner */}
             <div className="mb-3 flex items-start gap-2 rounded-lg border border-red-200/70 bg-red-50/90 px-3 py-2">

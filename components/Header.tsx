@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Phone } from 'lucide-react';
 import Image from 'next/image';
 import GenixLogo from '@/public/images/ginix.webp';
-import GenixIcon from '@/public/images/gpt-image-1.5-high-fidelity_a_make_it_professional-removebg-preview.png';
+import GenixIcon from '@/public/images/how-do-we-guarantee-our-results-100-result-guaranteed-11562939909snsu9zh59o-removebg-preview.png';
 import whatsappIcon from '@/public/images/icons8-whatsapp.svg';
 
 const Header = () => {
@@ -37,21 +37,14 @@ const Header = () => {
                             transition={{
                                 y: { duration: 3, repeat: Infinity, ease: "easeInOut" }
                             }}
-                            className="relative h-12 w-12 sm:h-16 sm:w-16 md:h-28 md:w-28 overflow-hidden rounded-xl md:rounded-2xl shadow-lg md:shadow-2xl bg-linear-to-br from-red-50 via-rose-100 to-red-200 ring-2 ring-red-300/70 border border-red-100/60 shrink-0"
+                            className="relative h-12 w-12 sm:h-16 sm:w-16 md:h-28 md:w-28 shrink-0"
                         >
-                            <div className="absolute inset-0 bg-radial-[circle_at_30%_30%] from-white/85 via-transparent to-transparent" />
                             <Image
                                 src={GenixIcon}
-                                alt="Genix Icon"
+                                alt="100% Results Guaranteed"
                                 fill
-                                className="object-contain p-1.5 sm:p-2 md:p-3 scale-[1.18] saturate-150 contrast-125 drop-shadow-[0_2px_6px_rgba(185,28,28,0.45)]"
+                                className="object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]"
                                 priority
-                            />
-                            {/* Shine effect */}
-                            <motion.div 
-                                className="absolute inset-0 bg-linear-to-tr from-transparent via-white/40 to-transparent -translate-x-full"
-                                animate={{ x: ["100%", "-100%"] }}
-                                transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 2 }}
                             />
                         </motion.div>
 

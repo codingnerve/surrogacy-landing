@@ -28,7 +28,12 @@ const Hero = () => {
                             Altruistic Surrogacy Program in Delhi NCR
                         </span>
                         <h1 className="mb-3 text-[1.75rem] font-semibold leading-tight text-text-main">
-                            Trusted Altruistic Surrogacy Care at Our{" "}
+                            Trusted{" "}
+                            <span className="relative inline-block text-primary font-extrabold">
+                                Altruistic Surrogacy
+                                <span className="absolute left-0 -bottom-0.5 h-[3px] w-full rounded-full bg-linear-to-r from-red-500 to-red-300" />
+                            </span>
+                            {" "}Care at Our{" "}
                             <span className="bg-linear-to-r from-red-600 to-red-400 bg-clip-text text-transparent">
                                 Surrogacy Hospital
                             </span>
@@ -72,7 +77,12 @@ const Hero = () => {
                             Altruistic Surrogacy Program in Delhi NCR
                         </span>
                         <h1 className="mb-6 text-5xl lg:text-6xl font-semibold leading-tight text-text-main">
-                            Trusted Altruistic Surrogacy Care at Our{" "}
+                            Trusted{" "}
+                            <span className="relative inline-block text-primary font-extrabold">
+                                Altruistic Surrogacy
+                                <span className="absolute left-0 -bottom-1 h-[4px] w-full rounded-full bg-linear-to-r from-red-500 to-red-300" />
+                            </span>
+                            {" "}Care at Our{" "}
                             <span className="bg-linear-to-r from-red-600 to-red-400 bg-clip-text text-transparent">
                                 Surrogacy Hospital
                             </span>
