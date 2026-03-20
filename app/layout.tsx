@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
@@ -26,6 +27,16 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} antialiased font-sans`}
       >
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-11060344649" />
+        <Script id="google-tag">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-11060344649');
+          `}
+        </Script>
         {children}
       </body>
     </html>
