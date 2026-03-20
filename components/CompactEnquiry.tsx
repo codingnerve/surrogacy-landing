@@ -11,7 +11,6 @@ const CompactEnquiry = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
-        email: '',
         phone: '',
         message: '',
         interest: 'Surrogacy Program'
@@ -21,8 +20,6 @@ const CompactEnquiry = () => {
     const validate = () => {
         const newErrors: Record<string, string> = {};
         if (!formData.name) newErrors.name = 'Required';
-        if (!formData.email) newErrors.email = 'Required';
-        else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Invalid';
         if (!formData.phone) newErrors.phone = 'Required';
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
@@ -43,7 +40,6 @@ const CompactEnquiry = () => {
             // Appending the exact Elementor field names you found!
             const submitData = new FormData();
             submitData.append('contact_name', formData.name);
-            submitData.append('contact_email', formData.email);
             submitData.append('contact_phone', formData.phone);
             submitData.append('contact_message', formData.message);
 
@@ -119,7 +115,7 @@ const CompactEnquiry = () => {
                 </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 md:gap-3">
+            <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-2.5 md:gap-3">
                 <input
                     type="text"
                     name="name"
@@ -127,16 +123,6 @@ const CompactEnquiry = () => {
                     value={formData.name}
                     onChange={handleChange}
                     className={`w-full h-10 sm:h-11 px-3 sm:px-4 rounded-lg border text-xs sm:text-sm ${errors.name ? 'border-red-500' : 'border-slate-200'
-                        } focus:outline-none focus:ring-2 focus:ring-primary/20 bg-white`}
-                />
-
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email Address"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className={`w-full h-10 sm:h-11 px-3 sm:px-4 rounded-lg border text-xs sm:text-sm ${errors.email ? 'border-red-500' : 'border-slate-200'
                         } focus:outline-none focus:ring-2 focus:ring-primary/20 bg-white`}
                 />
 
@@ -155,13 +141,13 @@ const CompactEnquiry = () => {
                     placeholder="Your Message (Optional)"
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full sm:col-span-2 p-2.5 sm:p-3 rounded-lg border border-slate-200 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 bg-white min-h-[72px] sm:min-h-[80px] resize-none shadow-sm"
+                    className="w-full p-2.5 sm:p-3 rounded-lg border border-slate-200 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 bg-white min-h-[72px] sm:min-h-[80px] resize-none shadow-sm"
                 />
 
                 <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="sm:col-span-2 h-10 sm:h-11 rounded-full bg-primary text-white font-semibold text-xs sm:text-sm shadow-md hover:bg-red-700 transition-all flex items-center justify-center gap-2"
+                    className="h-10 sm:h-11 rounded-full bg-primary text-white font-semibold text-xs sm:text-sm shadow-md hover:bg-red-700 transition-all flex items-center justify-center gap-2"
                 >
                     {isSubmitting ? (
                         <Loader2 size={16} className="animate-spin" />

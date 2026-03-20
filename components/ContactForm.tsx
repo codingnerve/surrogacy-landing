@@ -13,7 +13,6 @@ const ContactForm = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
-        email: '',
         phone: '',
         message: '',
         interest: 'Surrogacy Program'
@@ -23,8 +22,6 @@ const ContactForm = () => {
     const validate = () => {
         const newErrors: Record<string, string> = {};
         if (!formData.name) newErrors.name = 'Required';
-        if (!formData.email) newErrors.email = 'Required';
-        else if (!/\S+@\S+\.\S/.test(formData.email)) newErrors.email = 'Invalid';
         if (!formData.phone) newErrors.phone = 'Required';
 
         setErrors(newErrors);
@@ -46,7 +43,6 @@ const ContactForm = () => {
             // Appending the exact Elementor field names you found!
             const submitData = new FormData();
             submitData.append('contact_name', formData.name);
-            submitData.append('contact_email', formData.email);
             submitData.append('contact_phone', formData.phone);
             submitData.append('contact_message', formData.message);
 
@@ -154,29 +150,16 @@ const ContactForm = () => {
 
 
                             <form onSubmit={handleSubmit} className="space-y-2.5 md:space-y-3">
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 md:gap-3">
-                                    <div className="space-y-1">
-                                        <input
-                                            type="text"
-                                            name="name"
-                                            placeholder="Full Name"
-                                            value={formData.name}
-                                            onChange={handleChange}
-                                            className="w-full px-3.5 py-2.5 md:px-4 md:py-3 rounded-lg border border-slate-200/60 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all text-xs sm:text-sm bg-white/60"
-                                        />
-                                        {errors.name && <span className="text-[10px] text-red-500 ml-2">{errors.name}</span>}
-                                    </div>
-                                    <div className="space-y-1">
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            placeholder="Email Address"
-                                            value={formData.email}
-                                            onChange={handleChange}
-                                            className="w-full px-3.5 py-2.5 md:px-4 md:py-3 rounded-lg border border-slate-200/60 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all text-xs sm:text-sm bg-white/60"
-                                        />
-                                        {errors.email && <span className="text-[10px] text-red-500 ml-2">{errors.email}</span>}
-                                    </div>
+                                <div className="space-y-1">
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        placeholder="Full Name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        className="w-full px-3.5 py-2.5 md:px-4 md:py-3 rounded-lg border border-slate-200/60 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all text-xs sm:text-sm bg-white/60"
+                                    />
+                                    {errors.name && <span className="text-[10px] text-red-500 ml-2">{errors.name}</span>}
                                 </div>
 
                                 <div className="space-y-1">
