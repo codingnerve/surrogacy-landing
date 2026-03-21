@@ -44,6 +44,24 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-P9NFTQRR');
           `}
         </Script>
+        {/* Google Ads Tag */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-11060344649"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-11060344649');
+            gtag('config', 'AW-11060344649/HYE6CN-Z5IwcEMnu_Zkp', {
+              'phone_conversion_number': '7303301239'
+            });
+          `}
+        </Script>
         {children}
       </body>
     </html>
