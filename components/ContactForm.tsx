@@ -13,16 +13,25 @@ const ContactForm = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
+        email: '',
         phone: '',
         message: '',
-        interest: 'Surrogacy Program'
+        interest: 'Surrogacy Program',
+        confirmEmail: '', // Honeypot field
     });
     const [errors, setErrors] = useState<Record<string, string>>({});
+    const [submitStatus, setSubmitStatus] = useState<{ success?: boolean; message?: string } | null>(null);
 
     const validate = () => {
         const newErrors: Record<string, string> = {};
-        if (!formData.name) newErrors.name = 'Required';
-        if (!formData.phone) newErrors.phone = 'Required';
+        if (!formData.name) newErrors.name = 'Full name is required';
+        if (!formData.email) {
+            newErrors.email = 'Email is required';
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            newErrors.email = 'Please enter a valid email address';
+        }
+        if (!formData.phone) newErrors.phone = 'Phone number is required';
+        if (!formData.message) newErrors.message = 'Message is required';
 
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
@@ -30,44 +39,65 @@ const ContactForm = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        
+        // Spam protection: check honeypot
+        if (formData.confirmEmail) {
+            console.warn("Spam detected");
+            return;
+        }
+
         if (!validate()) return;
 
         setIsSubmitting(true);
+        setSubmitStatus(null);
+        
         try {
-            // Your exact Form ID
-            const formId = "2901";
-
-            // The correct .com WordPress API URL
-            const wpApiUrl = `https://genixfertility.com/wp-json/metform/v1/entries/insert/${formId}`;
-
-            // Appending the exact Elementor field names you found!
-            const submitData = new FormData();
-            submitData.append('contact_name', formData.name);
-            submitData.append('contact_phone', formData.phone);
-            submitData.append('contact_message', formData.message);
-
-            const response = await fetch(wpApiUrl, {
+            const response = await fetch('/api/contact', {
                 method: 'POST',
-                body: submitData,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    message: formData.message,
+                    source: 'Main Contact Form',
+                }),
             });
 
             const result = await response.json();
 
-            // Status 1 means success!
-            if (result.status === 1) {
-                router.push('/thank-you'); // Redirects to your thank you page
+            if (response.ok) {
+                setSubmitStatus({ success: true, message: 'Thank you! Your message has been sent.' });
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    message: '',
+                    interest: 'Surrogacy Program',
+                    confirmEmail: '',
+                });
+                // Redirect after brief delay
+                setTimeout(() => {
+                    router.push('/thank-you');
+                }, 2000);
             } else {
-                console.error("Metform Error:", result);
-                alert("Something went wrong. Please check the console.");
+                setSubmitStatus({ 
+                    success: false, 
+                    message: result.error || 'Something went wrong. Please try again later.' 
+                });
             }
         } catch (error) {
             console.error("Submission error:", error);
-            alert("Connection error. Please try again.");
+            setSubmitStatus({ 
+                success: false, 
+                message: 'Connection error. Please check your internet and try again.' 
+            });
         } finally {
             setIsSubmitting(false);
         }
     };
-
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
@@ -108,7 +138,7 @@ const ContactForm = () => {
                             <span className="inline-block px-2.5 py-1 mb-2 md:mb-4 text-[9px] md:text-[10px] font-bold tracking-[0.14em] md:tracking-[0.2em] text-primary uppercase bg-white/80 backdrop-blur-md rounded-full shadow-sm">
                                 Join the Program
                             </span>
-                            <h2 className="mb-1.5 md:mb-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+                            <h2 className="mb-1.5 md:mb-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
                                 Begin Your <br className="hidden md:block" />
                                 <span className="text-primary">Journey</span>
                             </h2>
@@ -123,7 +153,7 @@ const ContactForm = () => {
                         <div className="max-w-md mx-auto w-full bg-white/40 backdrop-blur-xl lg:bg-transparent p-3 sm:p-4 md:p-8 lg:p-0 rounded-2xl md:rounded-3xl border border-white/40 lg:border-none shadow-xl lg:shadow-none">
                             <div className="mb-3 md:mb-8 text-center md:text-left">
                                 <h3 className="text-base sm:text-lg md:text-2xl font-bold text-slate-800 mb-0.5 md:mb-1">Welcome to Care.</h3>
-                                <p className="text-slate-500 text-[10px] md:text-xs">Let&apos;s help you get started on your journey with detailed information on surrogacy charges in delhi and the total surrogacy cost in delhi ncr.</p>
+                                <p className="text-slate-500 text-[10px] md:text-xs font-semibold">Let&apos;s help you get started on your journey with detailed information on surrogacy charges in delhi and the total surrogacy cost in delhi ncr.</p>
                             </div>
 
                             <div className="mb-2 md:mb-3 overflow-hidden rounded-xl bg-linear-to-r from-red-600 to-red-500 px-4 py-4 shadow-lg shadow-red-300/40">
@@ -150,6 +180,18 @@ const ContactForm = () => {
 
 
                             <form onSubmit={handleSubmit} className="space-y-2.5 md:space-y-3">
+                                {/* Honeypot field (hidden) */}
+                                <div className="hidden">
+                                    <input
+                                        type="email"
+                                        name="confirmEmail"
+                                        value={formData.confirmEmail}
+                                        onChange={handleChange}
+                                        tabIndex={-1}
+                                        autoComplete="off"
+                                    />
+                                </div>
+
                                 <div className="space-y-1">
                                     <input
                                         type="text"
@@ -157,55 +199,61 @@ const ContactForm = () => {
                                         placeholder="Full Name"
                                         value={formData.name}
                                         onChange={handleChange}
-                                        className="w-full px-3.5 py-2.5 md:px-4 md:py-3 rounded-lg border border-slate-200/60 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all text-xs sm:text-sm bg-white/60"
+                                        className="w-full px-3.5 py-2.5 md:px-4 md:py-3 rounded-lg border border-slate-200/60 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all text-xs sm:text-sm bg-white"
+                                        required
                                     />
-                                    {errors.name && <span className="text-[10px] text-red-500 ml-2">{errors.name}</span>}
+                                    {errors.name && <span className="text-[10px] text-red-500 ml-2 font-medium">{errors.name}</span>}
                                 </div>
 
-                                <div className="space-y-1">
-                                    <input
-                                        type="tel"
-                                        name="phone"
-                                        placeholder="Phone Number"
-                                        value={formData.phone}
-                                        onChange={handleChange}
-                                        className="w-full px-3.5 py-2.5 md:px-4 md:py-3 rounded-lg border border-slate-200/60 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all text-xs sm:text-sm bg-white/60"
-                                    />
-                                    {errors.phone && <span className="text-[10px] text-red-500 ml-2">{errors.phone}</span>}
-                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <div className="space-y-1">
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            placeholder="Email Address"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            className="w-full px-3.5 py-2.5 md:px-4 md:py-3 rounded-lg border border-slate-200/60 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all text-xs sm:text-sm bg-white"
+                                            required
+                                        />
+                                        {errors.email && <span className="text-[10px] text-red-500 ml-2 font-medium">{errors.email}</span>}
+                                    </div>
 
-                                {/* <div className="space-y-1">
-                                    <select
-                                        name="interest"
-                                        value={formData.interest}
-                                        onChange={handleChange}
-                                        className="w-full px-4 py-3 rounded-lg border border-slate-200/60 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all text-sm bg-white/60 appearance-none"
-                                    >
-                                        <option value="Surrogacy Program">Surrogacy Program Inquiry</option>
-                                        <option value="Process Details">Process & Methodology</option>
-                                        <option value="Legal Guidance">Legal & Global Support</option>
-                                    </select>
-                                </div> */}
+                                    <div className="space-y-1">
+                                        <input
+                                            type="tel"
+                                            name="phone"
+                                            placeholder="Phone Number"
+                                            value={formData.phone}
+                                            onChange={handleChange}
+                                            className="w-full px-3.5 py-2.5 md:px-4 md:py-3 rounded-lg border border-slate-200/60 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all text-xs sm:text-sm bg-white"
+                                            required
+                                        />
+                                        {errors.phone && <span className="text-[10px] text-red-500 ml-2 font-medium">{errors.phone}</span>}
+                                    </div>
+                                </div>
 
                                 <div className="space-y-1">
                                     <textarea
                                         name="message"
-                                        placeholder="Your Message (Optional)"
+                                        placeholder="How can we help you? (Add details about your inquiry)"
                                         value={formData.message}
                                         onChange={handleChange}
-                                        className="w-full px-3.5 py-2.5 md:px-4 md:py-3 rounded-lg border border-slate-200/60 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all text-xs sm:text-sm bg-white/60 min-h-[84px] md:min-h-[100px] resize-none"
+                                        className="w-full px-3.5 py-2.5 md:px-4 md:py-3 rounded-lg border border-slate-200/60 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all text-xs sm:text-sm bg-white min-h-[84px] md:min-h-[100px] resize-none"
+                                        required
                                     />
+                                    {errors.message && <span className="text-[10px] text-red-500 ml-2 font-medium">{errors.message}</span>}
                                 </div>
 
                                 <div className="space-y-1.5 mt-3 md:mt-4">
                                     <label className="flex items-start gap-2 cursor-pointer group">
-                                        <input type="checkbox" required className="mt-1 accent-primary scale-90" />
+                                        <input type="checkbox" required defaultChecked className="mt-1 accent-primary scale-90" />
                                         <span className="text-[11px] text-slate-500 leading-tight">
                                             I want to receive latest news and program updates from SurrogacyCare.
                                         </span>
                                     </label>
                                     <label className="flex items-start gap-2 cursor-pointer group">
-                                        <input type="checkbox" required className="mt-1 accent-primary scale-90" />
+                                        <input type="checkbox" required defaultChecked className="mt-1 accent-primary scale-90" />
                                         <span className="text-[11px] text-slate-500 leading-tight">
                                             I agree to the <span className="text-primary font-medium hover:underline">Terms & Privacy Policy</span>.
                                         </span>
@@ -215,10 +263,26 @@ const ContactForm = () => {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full bg-primary hover:bg-red-700 text-white py-3 md:py-3.5 rounded-lg font-bold text-[11px] md:text-xs uppercase tracking-[0.12em] md:tracking-widest transition-all mt-3 md:mt-4 flex items-center justify-center gap-2 shadow-lg shadow-red-200/50"
+                                    className="w-full bg-primary hover:bg-red-700 text-white py-3 md:py-3.5 rounded-lg font-bold text-[11px] md:text-xs uppercase tracking-[0.12em] md:tracking-widest transition-all mt-3 md:mt-4 flex items-center justify-center gap-2 shadow-lg shadow-red-200/50 disabled:opacity-70 disabled:cursor-not-allowed"
                                 >
-                                    {isSubmitting ? <Loader2 size={14} className="animate-spin" /> : 'Get Started Now'}
+                                    {isSubmitting ? (
+                                        <>
+                                            <Loader2 size={16} className="animate-spin" /> 
+                                            Processing...
+                                        </>
+                                    ) : (
+                                        <>
+                                            Get Started Now <Send size={14} className="ml-1" />
+                                        </>
+                                    )}
                                 </button>
+                                
+                                {submitStatus && (
+                                    <div className={`mt-4 p-3 rounded-lg text-center text-xs md:text-sm font-medium ${submitStatus.success ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-red-50 text-red-700 border border-red-200'}`}>
+                                        {submitStatus.success && <CheckCircle size={14} className="inline mr-2" />}
+                                        {submitStatus.message}
+                                    </div>
+                                )}
                             </form>
                         </div>
                     </div>
