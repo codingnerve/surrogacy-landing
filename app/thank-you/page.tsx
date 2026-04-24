@@ -1,13 +1,45 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
+import Script from 'next/script';
 import { motion } from 'framer-motion';
 import { Play } from 'lucide-react';
 
+declare global {
+    interface Window {
+        dataLayer: unknown[];
+        gtag: (...args: unknown[]) => void;
+    }
+}
+
 export default function ThankYou() {
+    useEffect(() => {
+        // Fire Google Ads conversion event on page load
+        if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+            window.gtag('event', 'conversion', {
+                send_to: 'AW-11060344649/rkxzCPLGkIwcEMnu_Zkp',
+            });
+        }
+    }, []);
+
     return (
-        <main className="min-h-screen bg-[#4FB1A5] flex items-center justify-center p-4 md:p-6 overflow-hidden">
+        <>
+            {/* Google Ads Global Site Tag */}
+            <Script
+                src="https://www.googletagmanager.com/gtag/js?id=AW-11060344649"
+                strategy="afterInteractive"
+            />
+            <Script id="gtag-init" strategy="afterInteractive">
+                {`
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'AW-11060344649');
+                `}
+            </Script>
+
+            <main className="min-h-screen bg-[#4FB1A5] flex items-center justify-center p-4 md:p-6 overflow-hidden">
             {/* Main Container */}
             <div className="relative w-full max-w-2xl">
 
@@ -62,6 +94,7 @@ export default function ThankYou() {
                     </div>
                 </motion.div>
             </div>
-        </main>
+            </main>
+        </>
     );
 }
